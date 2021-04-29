@@ -14,7 +14,7 @@
 
 - [x] Characters = Full Crud
 - [x] Settings = Full Crud
-- [ ] Plot = Full Crud
+- [x] Plot = Full Crud
 - [ ] Chapters = Full Crud
 - [ ] Other Notes = Full Crud
 
