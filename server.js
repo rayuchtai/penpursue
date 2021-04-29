@@ -44,6 +44,8 @@ const logsController = require('./controllers/logs_controller.js')
 app.use('/logs', logsController)
 const charactersController = require('./controllers/characters_controller.js')
 app.use('/characters', charactersController)
+const settingsController = require('./controllers/settings_controller.js')
+app.use('/settings', settingsController)
 
 //___________________
 // Routes

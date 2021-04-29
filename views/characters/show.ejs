@@ -8,9 +8,12 @@
       <%- include ('../partials/nav.ejs') %>
     </nav>
     <div class="container">
-      <h1><%=character.name%></h1><br/>
-      <h2><%=character.type%></h2><br/>
-      <h4><%=character.description%></h4><br/>
+      <label for="name">Name:</label>
+      <p><%=character.name%></p><br/>
+      <label for="type">Type:</label>
+      <p><%=character.type%></p><br/>
+      <label for="description">Description:</label>
+      <p><%=character.description%></p><br/>
       <button type="button" name="button">
         <a href="/characters/<%=character.id%>/edit">EDIT</a>
       </button>

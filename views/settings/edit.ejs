@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../partials/head.ejs') %>
+  </head>
+  <body>
+    <nav>
+      <%- include ('../partials/nav.ejs') %>
+    </nav>
+    <div class="container">
+      <h1><%=setting.name%></h1>
+      <form action="/settings/<%=setting.id%>?_method=PUT" method="POST">
+        <label for="type">Type:</label>
+        <div class="select-container">
+          <select name="type" >
+            <option value="<%=setting.type%>"><%=setting.type%></option>
+            <option value="Integral">Integral</option>
+            <option value="Backdrop">Backdrop</option>
+          </select>
+        </div>
+        <label for="name">Name:</label><br/>
+        <input type="text" name="name" value="<%=setting.name%>" /><br/>
+        <label for="images">Link to Pinterest Board:</label><br/>
+        <input type="text" name="images" value="<%=setting.images%>"><br/>
+        <label for="description">Description:</label><br/>
+        <textarea name="description" cols="30" rows="10">
+          <%=setting.description%>
+        </textarea><br/>
+        <input type="submit" value="Submit Changes">
+      </form>
+    </div>
+  </body>
+</html>

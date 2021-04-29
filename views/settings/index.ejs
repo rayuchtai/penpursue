@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../partials/head.ejs') %>
+  </head>
+  <body>
+    <nav>
+      <%- include ('../partials/nav.ejs') %>
+    </nav>
+    <div class="container">
+      <h1>Settings</h1>
+      <a href="/settings/new">New Setting</a>
+      <h2>Settings are being desplayed here:</h2>
+      <ul>
+        <% for (let setting of settings){ %>
+          <li>
+            <a href="/settings/<%=setting.id%>">
+              <%=setting.name%>
+            </a>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  </body>
+</html>

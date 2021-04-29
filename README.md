@@ -12,8 +12,8 @@
 1. **April 28 2021**: After getting my app approval idea from the tech lead, I went straight ahead to create a wireframe. I wrote out how I want the app to function from the moment the user was to come across the app. I prefer to write things out because it allows me to use markers and other colorful pens to keep me interested as well as keep me productive. I had also written out some schemas as well as the basic formatting I want each of my pages to look like. Writing out my ideas and giving it form makes it easier for me to be able to translate my ideas to code that I can use.
 2. **April 29 2021**:
 
-- [x] Characters = Full Crud 
-- [ ] Settings = Full Crud
+- [x] Characters = Full Crud
+- [x] Settings = Full Crud
 - [ ] Plot = Full Crud
 - [ ] Chapters = Full Crud
 - [ ] Other Notes = Full Crud
