@@ -46,6 +46,8 @@ const charactersController = require('./controllers/characters_controller.js')
 app.use('/characters', charactersController)
 const settingsController = require('./controllers/settings_controller.js')
 app.use('/settings', settingsController)
+const plotsController = require('./controllers/plots_controller.js')
+app.use('/plots', plotsController)
 
 //___________________
 // Routes
