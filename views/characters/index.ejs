@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  <%- include ('../partials/head.ejs') %>
+  </head>
+  <body>
+    <nav>
+      <%- include ('../partials/nav.ejs') %>
+    </nav>
+    <h1>Characters</h1>
+    <a href="/characters/new">New Character</a>
+
+    <h2>Characters entries are displayed here:</h2>
+      <ul>
+        <% for (let character of characters){ %>
+          <li>
+            <a href="/characters/<%=character.id%>">
+              <%=character.name%>
+            </a>
+          </li>
+        <% } %>
+      </ul>
+  </body>
+</html>

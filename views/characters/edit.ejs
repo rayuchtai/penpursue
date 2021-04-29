@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../partials/head.ejs') %>
+  </head>
+  <body>
+    <nav>
+      <%- include ('../partials/nav.ejs') %>
+    </nav>
+    <div class="container">
+      <h1><%=character.name%></h1>
+      <form action="/characters/<%=character.id%>?_method=PUT" method="post">
+        <label for="type">Type:</label>
+        <div class="select-container">
+          <select name="type">
+            <option value="<%=character.type%>"><%=character.type%></option>
+            <option value="Dynamic">Dynamic</option>
+            <option value="Round">Round</option>
+            <option value="Static">Static</option>
+            <option value="Stock">Stock</option>
+            <option value="Symbolic">Symbolic</option>
+          </select>
+        </div>
+        <label for="name">Name:</label><br/>
+        <input type="text" name="name" value="<%=character.name%>"/><br/>
+        <label for="description">Description:</label><br/>
+        <textarea name="description" rows="8" cols="80"><%=character.description%></textarea><br/>
+        <input type="submit" value="Submit Changes">
+      </form>
+  </body>
+</html>

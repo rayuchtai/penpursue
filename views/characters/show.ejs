@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../partials/head.ejs') %>
+  </head>
+  <body>
+    <nav>
+      <%- include ('../partials/nav.ejs') %>
+    </nav>
+    <div class="container">
+      <h1><%=character.name%></h1><br/>
+      <h2><%=character.type%></h2><br/>
+      <h4><%=character.description%></h4><br/>
+      <button type="button" name="button">
+        <a href="/characters/<%=character.id%>/edit">EDIT</a>
+      </button>
+      <form action="/characters/<%=character.id%>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE" />
+      </form>
+      <button type="button" name="buttom">
+        <a href="/characters">BACK</a>
+      </button>
+    </div>
+  </body>
+</html>
