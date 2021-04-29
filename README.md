@@ -2,7 +2,8 @@
 
 #### Motivational Quote:
 
-* "You can't wait for inspiration. You have to go after it with a club." - Jack London, author of "The Call of the Wild"
+* "You can't wait for inspiration. You have to go after it with a club."
+    - Jack London, author of "The Call of the Wild"
 
 ## Technologies used:
 * Give me a moment to write it and stuff
