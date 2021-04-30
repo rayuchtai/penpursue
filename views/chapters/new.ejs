@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  <%- include ('../partials/head.ejs') %>
+  </head>
+  <body>
+    <nav>
+      <%- include ('../partials/nav.ejs') %>
+    </nav>
+    <div class="container">
+      <h1>New Chapter</h1>
+      <form action="/chapters" method="POST">
+        <label for="name">Name:</label><br/>
+        <input type="text" name="name" placeholder="Name" /><br/>
+        <label for="writing">Chapter Link:</label><br/>
+        <input type="text" name="writing" placeholder="Link to Chapter"/><br/>
+        <label for="description">Description:</label><br/>
+        <textarea name="description" cols="30" rows="10" placeholder="Describe the chapter...." ></textarea><br/>
+        <input type="submit" value="CREATE">
+      </form>
+    </div>
+  </body>
+</html>

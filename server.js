@@ -40,21 +40,23 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 // CONTROLLERS
 //___________________
-const logsController = require('./controllers/logs_controller.js')
-app.use('/logs', logsController)
+const elementsController = require('./controllers/elements_controller.js')
+app.use('/elements', elementsController)
 const charactersController = require('./controllers/characters_controller.js')
 app.use('/characters', charactersController)
 const settingsController = require('./controllers/settings_controller.js')
 app.use('/settings', settingsController)
 const plotsController = require('./controllers/plots_controller.js')
 app.use('/plots', plotsController)
+const chaptersController = require('./controllers/chapters_controller.js')
+app.use('/chapters', chaptersController)
 
 //___________________
 // Routes
 //___________________
 //localhost:3000
 app.get('/' , (req, res) => {
-  res.redirect('/logs');
+  res.redirect('/elements');
 });
 //___________________
 //Listener

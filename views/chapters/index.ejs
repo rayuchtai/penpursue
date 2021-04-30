@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../partials/head.ejs') %>
+  </head>
+  <body>
+    <nav>
+      <%- include ('../partials/nav.ejs') %>
+    </nav>
+    <div class="container">
+      <h1>Chapters</h1>
+      <a href="/chapters/new">New Chapter</a>
+      <h2>Chapters are being displayed here:</h2>
+      <ul>
+        <% for (let chapter of chapters){ %>
+          <li>
+            <a href="/chapters/<%=chapter.id%>">
+              <%=chapter.name%>
+            </a>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  </body>
+</html>
