@@ -23,6 +23,8 @@
 - I was able to make Characters, Settings, and Plots full crud. There is probably a more dynamic and easier way to add all these sections. But I wanted to create separate sections to make it more organized. If I have more time, then I want add modals to have to have the basic information about the different types of the different sections. I think that maybe I should add the modals on the home page and the new page. Could be helpful for amateur writers. I think that if I was able to get the login Authentication with extra time then maybe I'll add the modals.
 3. **April 30 2021**:
 - Today has been a little slow......mostly because the motivation to code is very low. Coffee, tea, tofu, and soup had helped. I suppose I was just hungry. I plan on finishing the rest of the elements to be full crud. I will then focus on the login Authentication.
+- I am so mad. Literally all my errors are because of a missing -s or an extra -s......how annoying.
+- Made the elements full crud. Watching Criminal Minds and/or watching anime helps. The background noise helps.
 
 ## Checklists
 
@@ -31,7 +33,7 @@
 - [x] Settings = Full Crud
 - [x] Plots = Full Crud
 - [x] Chapters = Full Crud
-- [ ] Other Notes = Full Crud
+- [x] Other Notes = Full Crud
 
 ### Lgin Authentication:
 - [ ] Create the login Authentication

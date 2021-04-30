@@ -50,6 +50,8 @@ const plotsController = require('./controllers/plots_controller.js')
 app.use('/plots', plotsController)
 const chaptersController = require('./controllers/chapters_controller.js')
 app.use('/chapters', chaptersController)
+const notesController = require('./controllers/notes_controller.js')
+app.use('/notes', notesController)
 
 //___________________
 // Routes

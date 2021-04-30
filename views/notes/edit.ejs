@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../partials/head.ejs') %>
+  </head>
+  <body>
+    <nav>
+      <%- include ('../partials/nav.ejs') %>
+    </nav>
+    <div class="container">
+      <form action="/notes/<%=note.id%>?_method=PUT" method="POST">
+        <label for="name">Name:</label><br/>
+        <input type="text" name="name" value="<%=note.name%>"/><br/>
+        <label for="link">Link:</label><br/>
+        <input type="text" name="link" value="<%=note.link%>"/><br/>
+        <label for="description">Description:</label><br/>
+        <textarea name="description" cols="30" rows="10">
+          <%=note.description%>
+        </textarea><br/>
+        <input type="submit" value="Submit Changes">
+      </form>
+    </div>
+  </body>
+</html>
