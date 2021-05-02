@@ -31,11 +31,17 @@ sessions.post('/', (req, res) => {
   })
 })
 
-
+//delete a session
 sessions.delete('/', (req,res) => {
   req.session.destroy(() => {
-    res.redirect('/')
+    res.redirect('/sessions/loggedout')
   })
 })
 
+//inform user they have logged out
+sessions.get('/loggedout', (req,res) => {
+  res.render(
+    'sessions/loggedout'
+  )
+})
 module.exports = sessions
