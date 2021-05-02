@@ -25,7 +25,10 @@
 - Today has been a little slow......mostly because the motivation to code is very low. Coffee, tea, tofu, and soup had helped. I suppose I was just hungry. I plan on finishing the rest of the elements to be full crud. I will then focus on the login Authentication.
 - I am so mad. Literally all my errors are because of a missing -s or an extra -s......how annoying.
 - Made the elements full crud. Watching Criminal Minds and/or watching anime helps. The background noise helps.
-
+4. **May 1 2021**
+- I got my first dose of the COVID vaccine. I knocked out. I slept the day away like I had all the time in the world.
+5. **May 2 2021**
+-Planning on catching up.
 ## Checklists
 
 ### Making the different Sections Full Crud:
@@ -36,6 +39,7 @@
 - [x] Other Notes = Full Crud
 
 ### Lgin Authentication:
+- [ ] Figure out related models
 - [ ] Create the login Authentication
 - [ ] Have the corresponding entries for each specified user
 - [ ] Do it without the tears
