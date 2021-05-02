@@ -2,6 +2,7 @@
 //Dependencies
 //___________________
 const express = require('express');
+const session = require('express-session');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
@@ -36,7 +37,14 @@ app.use(express.urlencoded({ extended: true }));// extended: false - does not al
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
-
+//for loginAuth
+app.use(
+  session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+)
 //___________________
 // CONTROLLERS
 //___________________
@@ -52,7 +60,10 @@ const chaptersController = require('./controllers/chapters_controller.js')
 app.use('/chapters', chaptersController)
 const notesController = require('./controllers/notes_controller.js')
 app.use('/notes', notesController)
-
+const userController = require('./controllers/users_controller.js')
+app.use('/users', userController)
+const sessionsController = require('./controllers/sessions_controller.js')
+app.use('/sessions', sessionsController)
 //___________________
 // Routes
 //___________________

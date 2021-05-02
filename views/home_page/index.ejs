@@ -7,13 +7,19 @@
     <nav>
       <%- include ('../partials/nav.ejs') %>
     </nav>
-    <h1>Home Index Page</h1>
-      <ul>
-        <li><a href="/characters">Characters</a></li>
-        <li><a href="/settings">Settings</a></li>
-        <li><a href="/plots">Plots</a></li>
-        <li><a href="/chapters">Chapters</a></li>
-        <li><a href="/notes">Notes</a></li>
-      </ul>
+    <% if (currentUser){ %>
+      <h1>Home Index Page</h1>
+        <ul>
+          <li><a href="/characters">Characters</a></li>
+          <li><a href="/settings">Settings</a></li>
+          <li><a href="/plots">Plots</a></li>
+          <li><a href="/chapters">Chapters</a></li>
+          <li><a href="/notes">Notes</a></li>
+        </ul>
+    <% } else { %>
+      <button><a href="/users/new">Sign Up</a></button>
+      <button><a href="/sessions/new">Log In</a></button>
+  <% } %>
+
   </body>
 </html>
