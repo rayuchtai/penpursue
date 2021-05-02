@@ -1,11 +1,16 @@
 
-if (currentUser){
+<% if (currentUser){ %>
   <a href="/elements"></a>
 
   <ul>
-    <li><a href="/"></a></li>
+    <li><a href="/elements">Home</a></li>
+    <form action="/sessions?_method=DELETE" method="post">
+      <button type="submit">Log Out</button>
+    </form>
   </ul>
-}
+<% } else { %>
+
+<% } %>
 
 <a href="/elements">PEN PURSUE</a>
 

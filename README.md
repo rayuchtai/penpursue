@@ -29,6 +29,8 @@
 - I got my first dose of the COVID vaccine. I knocked out. I slept the day away like I had all the time in the world.
 5. **May 2 2021**
 -Planning on catching up.
+- I figured out the login Authentication.
+- Now it's time to tackle the related models. Here I go.
 ## Checklists
 
 ### Making the different Sections Full Crud:
@@ -40,7 +42,7 @@
 
 ### Lgin Authentication:
 - [ ] Figure out related models
-- [ ] Create the login Authentication
+- [x] Create the login Authentication
 - [ ] Have the corresponding entries for each specified user
 - [ ] Do it without the tears
 
