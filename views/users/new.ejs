@@ -5,15 +5,31 @@
   </head>
   <body>
     <% include ('../partials/nav.ejs') %>
-    <h1>New User</h1>
-    <form action="/users" method="POST">
-      <label for="name">Name:</label><br/>
-      <input type="text" name="name" required/><br/>
-      <label for="username">Username:</label><br/>
-      <input type="username" name="username" required/><br/>
-      <label for="password">Password:</label><br/>
-      <input type="text" name="password" required/><br/>
-      <input type="submit" value="SIGN UP">
-    </form>
+    <div class="container">
+      <% if (currentUser) { %>
+        <h1>Home Index Page</h1>
+          <ul>
+            <li><a href="/characters">Characters</a></li>
+            <li><a href="/settings">Settings</a></li>
+            <li><a href="/plots">Plots</a></li>
+            <li><a href="/chapters">Chapters</a></li>
+            <li><a href="/notes">Notes</a></li>
+          </ul>
+      <% } else { %>
+          <h1>Are you a Returning User?</h1>
+          <button><a href="/sessions/new">Log In</a></button>
+
+          <h1>New User</h1>
+          <form action="/users" method="POST">
+            <label for="name">Name:</label><br/>
+            <input type="text" name="name" required/><br/>
+            <label for="username">Username:</label><br/>
+            <input type="username" name="username" required/><br/>
+            <label for="password">Password:</label><br/>
+            <input type="text" name="password" required/><br/>
+            <input type="submit" value="SIGN UP">
+          </form>
+        <% } %>
+    </div>
   </body>
 </html>

@@ -5,7 +5,10 @@ const plots = express.Router()
 //NEW: new page to add a new plot entry
 plots.get('/new', (req,res) => {
   res.render(
-    'plots/new.ejs'
+    'plots/new.ejs',
+    {
+      currentUser: req.session.currentUser
+    }
   )
 })
 
@@ -15,7 +18,8 @@ plots.get('/:id/edit', (req,res) => {
     res.render(
       'plots/edit.ejs',
       {
-        plot: foundPlot
+        plot: foundPlot,
+        currentUser: req.session.currentUser
       }
     )
   })
@@ -34,7 +38,8 @@ plots.get('/:id', (req,res) => {
     res.render(
       'plots/show.ejs',
       {
-        plot: foundPlot
+        plot: foundPlot,
+        currentUser: req.session.currentUser
       }
     )
   })
@@ -65,7 +70,8 @@ plots.get('/', (req,res) => {
     res.render(
       'plots/index.ejs',
       {
-        plots: allPlots
+        plots: allPlots,
+        currentUser: req.session.currentUser
       }
     )
   })

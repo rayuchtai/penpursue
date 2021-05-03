@@ -5,7 +5,10 @@ const notes = express.Router()
 //NEW Page
 notes.get('/new', (req,res) => {
   res.render(
-    'notes/new.ejs'
+    'notes/new.ejs',
+    {
+      currentUser: req.session.currentUser
+    }
   )
 })
 
@@ -15,7 +18,8 @@ notes.get('/:id/edit', (req,res) => {
     res.render(
       'notes/edit.ejs',
       {
-        note: foundNote
+        note: foundNote,
+        currentUser: req.session.currentUser
       }
     )
   })
@@ -34,7 +38,8 @@ notes.get('/:id', (req,res) => {
     res.render(
       'notes/show.ejs',
       {
-        note: foundNote
+        note: foundNote,
+        currentUser: req.session.currentUser
       }
     )
   })
@@ -65,7 +70,8 @@ notes.get('/', (req,res) => {
     res.render(
       'notes/index.ejs',
       {
-        notes: allNotes
+        notes: allNotes,
+        currentUser: req.session.currentUser
       }
     )
   })

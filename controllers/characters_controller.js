@@ -1,11 +1,16 @@
 const express = require('express')
+const User = require('../models/users.js')
 const Character = require('../models/characters.js')
 const characters = express.Router()
 
 //NEW Page: Add a new Character
 characters.get('/new', (req,res) => {
+  console.log(req);
   res.render(
-    'characters/new.ejs'
+    'characters/new.ejs',
+    {
+      currentUser: req.session.currentUser
+    }
   )
 })
 
@@ -15,7 +20,8 @@ characters.get('/:id/edit', (req,res) => {
     res.render(
       'characters/edit.ejs',
       {
-        character: foundCharacter
+        character: foundCharacter,
+        currentUser: req.session.currentUser
       }
     )
   })
@@ -24,7 +30,12 @@ characters.get('/:id/edit', (req,res) => {
 //DELETE page: Delete a Character
 characters.delete('/:id', (req,res) => {
   Character.findByIdAndRemove(req.params.id, (error, deletedCharacter) => {
-    res.redirect('/characters')
+    User.findById(req.session.currentUser._id, (error, foundUser) => {
+      foundUser.characters.id(req.params.id).remove()
+      foundUser.save((error, data) => {
+        res.redirect('/characters')
+      })
+    })
   })
 })
 
@@ -34,33 +45,47 @@ characters.get('/:id', (req,res) => {
     res.render(
       'characters/show.ejs',
       {
-        character: foundCharacter
+        character: foundCharacter,
+        currentUser: req.session.currentUser
       }
     )
   })
 })
 
-//UPDATE page: Update the chosen character.
+//UPDATE route: Update the chosen character.
 characters.put('/:id', (req,res) => {
   Character.findByIdAndUpdate(req.params.id, req.body, {new:true}, (error, updatedCharacter) => {
-    res.redirect('/characters')
+    User.findById(req.session.currentUser._id, (error, foundUser) => {
+      foundUser.characters.id(req.params.id).remove()
+      foundUser.characters.push(updatedCharacter)
+      foundUser.save((error, data) => {
+        res.redirect('/characters')
+      })
+    })
   })
 })
 
-//CREATE page: Creating a new character
+//CREATE route: Creating a new character
 characters.post('/', (req,res) => {
-  Character.create(req.body, (error, createdCharacter) => {
-    res.redirect('/characters')
+  User.findById(req.session.currentUser._id, (error, foundUser) => {
+    console.log(foundUser);
+    Character.create(req.body, (error, createdCharacter) => {
+      foundUser.characters.push(createdCharacter)
+      foundUser.save((error, data) => {
+        res.redirect('/characters')
+      })
+    })
   })
 })
 
 //Index Page: Where the character names are beign displayed
 characters.get('/', (req,res) => {
-  Character.find({}, (error, allCharacters) => {
+  User.findById(req.session.currentUser._id, (error, foundUser) => {
     res.render(
       'characters/index.ejs',
       {
-        characters: allCharacters
+        characters: foundUser.characters,
+        currentUser: req.session.currentUser
       }
     )
   })

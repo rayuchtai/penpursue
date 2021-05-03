@@ -5,7 +5,10 @@ const settings = express.Router()
 //new route: create a new entry referencing a setting
 settings.get('/new', (req,res) => {
   res.render(
-    'settings/new.ejs'
+    'settings/new.ejs',
+    {
+      currentUser: req.session.currentUser
+    }
   )
 })
 
@@ -15,7 +18,8 @@ settings.get('/:id/edit', (req,res) => {
     res.render(
       'settings/edit.ejs',
       {
-        setting: foundSetting
+        setting: foundSetting,
+        currentUser: req.session.currentUser
       }
     )
   })
@@ -34,7 +38,8 @@ settings.get('/:id', (req,res) => {
     res.render(
       'settings/show.ejs',
       {
-        setting: foundSetting
+        setting: foundSetting,
+        currentUser: req.session.currentUser
       }
     )
   })
@@ -65,7 +70,8 @@ settings.get('/', (req,res) => {
     res.render(
       'settings/index.ejs',
       {
-        settings: allSettings
+        settings: allSettings,
+        currentUser: req.session.currentUser
       }
     )
   })

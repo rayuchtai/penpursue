@@ -5,7 +5,7 @@ const User = require('../models/users.js')
 //the home page.
 elements.get('/', (req,res) => {
   res.render(
-    'home_page/index.ejs',
+    'users/new.ejs',
     {
       currentUser: req.session.currentUser
     }

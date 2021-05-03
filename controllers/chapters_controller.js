@@ -5,7 +5,10 @@ const chapters = express.Router()
 //NEW Page
 chapters.get('/new', (req,res) => {
   res.render(
-    'chapters/new.ejs'
+    'chapters/new.ejs',
+    {
+      currentUser: req.session.currentUser
+    }
   )
 })
 
@@ -15,7 +18,8 @@ chapters.get('/:id/edit', (req,res) => {
     res.render(
       'chapters/edit.ejs',
       {
-        chapter: foundChapter
+        chapter: foundChapter,
+        currentUser: req.session.currentUser
       }
     )
   })
@@ -34,7 +38,8 @@ chapters.get('/:id', (req,res) => {
     res.render(
       'chapters/show.ejs',
       {
-        chapter: foundChapter
+        chapter: foundChapter,
+        currentUser: req.session.currentUser
       }
     )
   })
@@ -65,7 +70,8 @@ chapters.get('/', (req,res) => {
     res.render(
       'chapters/index.ejs',
       {
-        chapters: allChapters
+        chapters: allChapters,
+        currentUser: req.session.currentUser
       }
     )
   })

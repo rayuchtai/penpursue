@@ -28,9 +28,15 @@
 4. **May 1 2021**
 - I got my first dose of the COVID vaccine. I knocked out. I slept the day away like I had all the time in the world.
 5. **May 2 2021**
--Planning on catching up.
+- Planning on catching up.
 - I figured out the login Authentication.
 - Now it's time to tackle the related models. Here I go.
+- I knocked out again. Why did the dang shot make me so freaking tired? Bad Timing.
+6. **May 3 2021**
+- I am definitely planning on catching up.
+- Tackling the related models:
+  - I am crying tears of joy! I figured out how to do the thing!!! YES!
+  - I figured out how to add a new character to another user without the character appearing on the other user's page. The gasp of amazement I did was great. Movie sound effect perfect. The edit, create, and delete functionality worked well. Now I NEED to add this feature to the other four elements' controller js file.
 ## Checklists
 
 ### Making the different Sections Full Crud:
@@ -46,7 +52,7 @@
 - [ ] Have the corresponding entries for each specified user
 - [ ] Do it without the tears
 
-### Extra Things to Add:
+### Extra Things to Add if there is enough time:
 - [ ] Each modal to describe each section on the Home page
 - [ ] A Modal on the new page that will describe each type. Like a help button. Maybe the the button should be a question mark in a circle.
 

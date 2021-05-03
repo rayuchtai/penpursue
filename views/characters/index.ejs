@@ -12,10 +12,10 @@
 
     <h2>Characters entries are displayed here:</h2>
       <ul>
-        <% for (let character of characters){ %>
+        <% for (let i = 0; i < characters.length; i++){ %>
           <li>
-            <a href="/characters/<%=character.id%>">
-              <%=character.name%>
+            <a href="/characters/<%=characters[i].id%>">
+              <%=characters[i].name%>
             </a>
           </li>
         <% } %>
