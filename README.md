@@ -46,11 +46,11 @@
 - [x] Chapters = Full Crud
 - [x] Other Notes = Full Crud
 
-### Lgin Authentication:
-- [ ] Figure out related models
+### Lgin Authentication and the Related Models:
+- [x] Figure out related models
 - [x] Create the login Authentication
-- [ ] Have the corresponding entries for each specified user
-- [ ] Do it without the tears
+- [x] Have the corresponding entries for each specified user
+- [x] Do it without the tears
 
 ### Extra Things to Add if there is enough time:
 - [ ] Each modal to describe each section on the Home page
