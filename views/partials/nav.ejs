@@ -1,11 +1,11 @@
 <% if(currentUser){ %>
     <li><a href="/elements">Home</a></li>
-    <li>PENPURSUE</li>
+    <li id="app-name">PENPURSUE</li>
     <li><form action="/sessions?_method=DELETE" method="post">
       <button type="submit">Sign Out</button>
     </form></li>
 <% } else { %>
   <li><a href="/elements">Home</a></li>
-  <li>PENPURSUE</li>
+  <li id="app-name">PENPURSUE</li>
   <li><a href="/users/new">Sign Up</a>/<a href="/sessions/new">Sign In</a></li>
 <% } %>

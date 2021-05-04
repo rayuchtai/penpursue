@@ -4,10 +4,15 @@ body {
   justify-content: center;
   background-color: rgb(249,222,201);
 }
+li#app-name{
+  font-size: 2em;
+  font-family: 'Cinzel Decorative', cursive;
+}
 /* styling the navigation bar */
 nav{
   display: flex;
   justify-content: space-around;
+  align-items: baseline;
   background-color: rgb(248, 240, 236);
   padding: 1em;
 }
@@ -17,10 +22,12 @@ ul{
 }
 li {
   list-style-type: none;
+  font-family: 'Playfair Display', serif;
 }
 li > form > button {;
   border: none;
   background-color: inherit;
+  font-family: 'Playfair Display', serif;
 }
 li > form > button:hover {
   background-color: rgba(117, 64, 67, 0.5);
@@ -32,7 +39,13 @@ a {
 }
 
 /* styling the div.container  */
-
+h1 , h2 , h3{
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+p , ol > li{
+  font-family: 'Quicksand', sans-serif;
+}
 div.container {
   display: flex;
   flex-direction: column;
@@ -94,6 +107,7 @@ input[type=text] {
   margin: .25em;
 }
 input[type=submit]{
+  font-family: 'Playfair Display', serif;
   margin: .25em;
   border: none;
   border-radius: 5%;
@@ -142,6 +156,7 @@ div.element-text > ol {
 }
 span.term{
   font-weight: bold;
+  text-decoration: underline;
 }
 
 /* styling the element's Index Page*/
