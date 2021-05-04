@@ -35,7 +35,8 @@ li > form > button:hover {
 }
 a {
   color: black;
-  text-decoration: none;;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
 }
 
 /* styling the div.container  */
@@ -81,6 +82,7 @@ div.container {
   background-color: rgba(117, 64, 67, 0.5)
 }
 .new-writer > .basic-button {
+  font-family: 'Playfair Display', serif;
   padding: .5em .75em;
   border: none;
   border-radius: 5%;
@@ -214,4 +216,9 @@ textarea {
   resize: none;
   width: 30em;
   height: 10em;
+}
+
+#signin {
+  margin-bottom: 0em;
+  margin-top: 1em;
 }
