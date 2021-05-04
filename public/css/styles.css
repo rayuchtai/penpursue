@@ -18,6 +18,14 @@ ul{
 li {
   list-style-type: none;
 }
+li > form > button {;
+  border: none;
+  background-color: inherit;
+}
+li > form > button:hover {
+  background-color: rgba(117, 64, 67, 0.5);
+  color: white;
+}
 a {
   color: black;
   text-decoration: none;;
@@ -35,6 +43,7 @@ div.container {
 .welcome-text{
   text-align: center;
   margin: 1em 0em;
+  padding: 0em 2em;
   background-color: rgba(215, 191, 164, 0.5)
 }
 
@@ -93,3 +102,18 @@ input[type=submit]{
 }
 
 /* styling the Elements page */
+div.elements {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+div.elements > li {
+text-align: center;
+margin: 1em;
+padding: 1em 0em;
+margin-left: 0em;
+width: 100%;
+background-color: rgba(159, 117, 106, 0.5)
+}
