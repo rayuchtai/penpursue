@@ -32,6 +32,8 @@ div.container {
 
 .welcome-text{
   text-align: center;
+  margin: 1em 0em;
+  background-color: rgba(215, 191, 164, 0.5)
 }
 
 .which-writer{
@@ -41,4 +43,20 @@ div.container {
 
 .returning, .new-writer{
   text-align: center;
+  margin: 1em;
+  padding: .5em;
+  border-radius: 5%;
+  background-color: rgba(251, 250, 246, 0.5)
+}
+
+.returning > button {
+  margin-top: 1.25em;
+  padding: .5em .75em;
+  border: none;
+  background-color: rgba(117, 64, 67, 0.5)
+}
+.new-writer > button {
+  padding: .5em .75em;
+  border: none;
+  background-color: rgba(117, 64, 67, 0.5)
 }
