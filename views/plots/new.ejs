@@ -8,24 +8,27 @@
       <%- include ('../partials/nav.ejs') %>
     </nav>
     <div class="container">
-      <form action="/plots" method="POST">
-        <label for="type">Type:</label>
-        <div class="select-container">
-          <select name="type">
-            <option value="N/A">Select a Type</option>
-            <option value="Exposition">Exposition</option>
-            <option value="Rising Action">Rising Action</option>
-            <option value="Climax">Climax</option>
-            <option value="Falling Action">Falling Action</option>
-            <option value="Resolution">Resolution</option>
-          </select>
-        </div>
-        <label for="name">Name:</label><br/>
-        <input type="text" name="name" placeholder="name" required /><br/>
-        <label for="description">Description:</label><br/>
-        <textarea name="description" cols="30" rows="10" placeholder="describe plot here..."></textarea><br/>
-        <input type="submit" value="CREATE">
-      </form>
+      <h1>New Plot Point</h1>
+      <div class="input-field">
+        <form action="/plots" method="POST">
+          <label for="type">Type:</label>
+          <div class="select-container">
+            <select name="type">
+              <option value="N/A">Select a Type</option>
+              <option value="Exposition">Exposition</option>
+              <option value="Rising Action">Rising Action</option>
+              <option value="Climax">Climax</option>
+              <option value="Falling Action">Falling Action</option>
+              <option value="Resolution">Resolution</option>
+            </select>
+          </div>
+          <label for="name">Name:</label><br/>
+          <input type="text" name="name" placeholder="name" required /><br/>
+          <label for="description">Description:</label><br/>
+          <textarea name="description" cols="30" rows="10" placeholder="describe plot here..."></textarea><br/>
+          <input type="submit" value="CREATE">
+        </form>
+      </div>
     </div>
   </body>
 </html>

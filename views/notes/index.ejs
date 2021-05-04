@@ -13,12 +13,12 @@
         <div class="element-text">
           <p> <span class="term">Notes</span> are notes. <br><br>This is just a more general area for whatever you find/discover. This can hold random facts and/or information so you don't have to constantly search it up on a search engine. Some facts may include: how much blood does the average adult human has, what is an access acid, where are the spinal motor neurons that control respiratory muscles???
 
-          <br><br>Just a place to put the information in. 
+          <br><br>Just a place to put the information in.
           </p>
           <a href="/notes/new" class="button-sus">New Note</a>
         </div>
       </div>
-      <h2><%=currentUser.name%>'s Notes:</h2>
+      <h2 id="elements"><%=currentUser.name%>'s Notes:</h2>
       <div class="entry-storage">
         <% for(let note of notes) { %>
           <li class="entries">

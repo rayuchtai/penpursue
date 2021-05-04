@@ -8,23 +8,21 @@
       <%- include('../partials/nav.ejs') %>
     </nav>
     <div class="container">
-      <label for="type">Type:</label><br/>
-      <p><%=plot.type%></p><br/>
-      <label for="name">Name:</label><br/>
-      <p><%=plot.name%></p>
-      <label for="description">Description:</label>
-      <p><%=plot.description%></p>
-
+      <h1><%=plot.name%></h1>
+      <div class="entry-info">
+        <label for="type"><span class="term">Type:</span></label>
+        <p><%=plot.type%></p>
+        <label for="name"><span class="term">Name:</span></label>
+        <p><%=plot.name%></p>
+        <label for="description"><span class="term">Description:</span></label>
+        <p><%=plot.description%></p>
+      </div>
       <div class="buttons">
-        <button type="button" name="button">
-          <a href="/plots/<%=plot.id%>/edit">EDIT</a>
-        </button>
+        <a href="/plots/<%=plot.id%>/edit" class="button-sus">EDIT</a>
         <form action="/plots/<%=plot.id%>?_method=DELETE" method="POST">
           <input type="submit" value="DELETE" />
         </form>
-        <button type="button" name="buttom">
-          <a href="/plots">BACK</a>
-        </button>
+        <a href="/plots" class="button-sus">BACK</a>
       </div>
     </div>
   </body>

@@ -8,22 +8,36 @@
       <%- include ('../partials/nav.ejs') %>
     </nav>
     <div class="container">
-      <h1>Plots</h1>
-      <a href="/plots/new">New Plot</a>
+      <div class="element">
+        <h1>Plots</h1>
+        <div class="element-text">
+          <p><span class="term">Plot</span> has five parts. <br>The five parts work together to build suspense, and flow together smoothly to create a unified story line.
+            <ol>
+              <li>1. <span class="term">Exposition:</span>This is the introduction, introducing characters, establishing the setting, and begin to introduce the primary conflict of the story.
+              </li><br/>
+              <li>2. <span class="term">Rising Action:</span>The rising action usually beings with a moment that sets your story into action. As it progresses, you'll have multiple momemnts of conflict that excalate and create tension as the story moves toward the climax.</li><br/>
+              <li>3. <span class="term">Climax:</span>Climax is the peak of tension, plot, and character in your story. It's the moment tha tyour reader has been waiting for so make it exciting! This is where EVERYTHING changes or where your character has to make a life-altering decision.</li><br/>
+              <li>4. <span class="term">Falling Action:</span>After reaching the peak of your story, it's time to start moving toward a more satisfying conclusion. This is the time to start resolving conflicts and subplots so your story doesn't feel rushed in the last few chapters.</li><br/>
+              <li>5. <span class="term">Resolution:</span>Finally! The resolution is the end of your story where you can tie up the final loose ends and bringyour story to its happy or tragic ending. If you are writing a series, now would be the time to write a cliffhanger and leave them eager for the next installment.</li><br/>
+            </ol>
+          </p>
+            <a href="/plots/new" class="button-sus">New Plot</a>
+        </div>
+      </div>
 
-      <h2>Plots entries are displayed here</h2>
-      <ul>
+      <h2 id="elements"><%=currentUser.name%>'s Plot Points:</h2>
+      <div class="entry-storage">
         <% for (let plot of plots) { %>
-          <li>
+          <li class="entries">
             <a href="/plots/<%=plot.id%>">
               <%=plot.name%>
             </a>
           </li>
         <% } %>
-      </ul>
-    </div>
-    <div class="buttons">
-      <a href="/elements">Elements Page</a>
+      </div>
+      <div class="buttons">
+        <a href="/elements" class="button-sus">Elements Page</a>
+      </div>
     </div>
   </body>
 </html>
