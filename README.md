@@ -37,7 +37,8 @@
 - Tackling the related models:
   - I am crying tears of joy! I figured out how to do the thing!!! YES!
   - I figured out how to add a new character to another user without the character appearing on the other user's page. The gasp of amazement I did was great. Movie sound effect perfect. The edit, create, and delete functionality worked well. Now I NEED to add this feature to the other four elements' controller js file.
-- I'm adding CSS at the moment. If I calm down, then it isn't as difficult, however, I am in the beginning stages of css right now. I lost time because I had once again knocked out. 
+- I'm adding CSS at the moment. If I calm down, then it isn't as difficult, however, I am in the beginning stages of css right now. I lost time because I had once again knocked out.
+  - The style is simple but I have never been more proud of myself.
 ## Checklists
 
 ### Making the different Sections Full Crud:
@@ -58,10 +59,10 @@
 - [ ] A Modal on the new page that will describe each type. Like a help button. Maybe the the button should be a question mark in a circle.
 
 ### CSS. Don't cry over CSS!
-- [ ] Make the app have a uniform design
-- [ ] Color Scheme = Warm browns and red tones.
-- [ ] Utilize Divs and Classes to make the CSS easier.
-- [ ] Get better at Flexbox.
+- [x] Make the app have a uniform design
+- [x] Color Scheme = Warm browns and red tones.
+- [x] Utilize Divs and Classes to make the CSS easier.
+- [x] Get better at Flexbox.
 
 #### Possible Challenges:
 1. I get my first dose of the COVID shot on Saturday....hopefully I won't be as out of commission as I fear but I want to be able to get my pages connected and running properly by the end of Tomorrow, work on Login Authentication on Friday to Saturday, and then worry about CSS from Sunday to Monday. I want to at least get a good night sleep before presentation day.
