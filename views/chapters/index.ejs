@@ -8,21 +8,26 @@
       <%- include ('../partials/nav.ejs') %>
     </nav>
     <div class="container">
-      <h1>Chapters</h1>
-      <a href="/chapters/new">New Chapter</a>
-      <h2>Chapters are being displayed here:</h2>
-      <ul>
+      <div class="element">
+        <h1>Chapters</h1>
+        <div class="element-text">
+          <p><span class="term">Chapter</span> is a main division of a book.</p>
+          <a href="/chapters/new" class="button-sus">New Chapter</a>
+        </div>
+      </div>
+      <h2><%=currentUser.name%>'s Chapters</h2>
+      <div class="entry-storage">
         <% for (let chapter of chapters){ %>
-          <li>
+          <li class="entries">
             <a href="/chapters/<%=chapter.id%>">
               <%=chapter.name%>
             </a>
           </li>
         <% } %>
-      </ul>
-    </div>
-    <div class="buttons">
-      <a href="/elements">Elements Page</a>
+      </div>
+      <div class="buttons">
+        <a href="/elements" class="button-sus">Elements Page</a>
+      </div>
     </div>
   </body>
 </html>

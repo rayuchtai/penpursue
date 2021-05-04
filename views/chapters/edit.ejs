@@ -9,17 +9,19 @@
     </nav>
     <div class="container">
       <h1><%=chapter.name%></h1>
-      <form action="/chapters/<%=chapter.id%>?_method=PUT" method="POST">
-        <label for="name">Name:</label><br/>
-        <input type="text" name="name" value="<%=chapter.name%>" /><br/>
-        <label for="writing">Chapter Link:</label><br/>
-        <input type="text" name="writing" value="<%=chapter.writing%>"/><br/>
-        <label for="description">Description:</label><br/>
-        <textarea name="description" cols="30" rows="10">
-          <%=chapter.description%>
-        </textarea><br/>
-        <input type="submit" value="Submit Changes">
-      </form>
+      <div class="input-field">
+        <form action="/chapters/<%=chapter.id%>?_method=PUT" method="POST">
+          <label for="name">Name:</label><br/>
+          <input type="text" name="name" value="<%=chapter.name%>" /><br/>
+          <label for="writing">Chapter Link:</label><br/>
+          <input type="text" name="writing" value="<%=chapter.writing%>"/><br/>
+          <label for="description">Description:</label><br/>
+          <textarea name="description" cols="30" rows="10">
+            <%=chapter.description%>
+          </textarea><br/>
+          <input type="submit" value="Submit Changes">
+        </form>
+      </div>
     </div>
   </body>
 </html>
