@@ -48,7 +48,7 @@ characters.get('/:id', (req,res) => {
       'characters/show.ejs',
       {
         character: foundCharacter,
-        tabtitle: foundCharacter.name,
+        tabTitle: foundCharacter.name,
         currentUser: req.session.currentUser
       }
     )

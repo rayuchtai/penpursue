@@ -67,7 +67,7 @@ div.container {
   border-radius: 5%;
   background-color: rgba(117, 64, 67, 0.5)
 }
-.new-writer > button {
+.new-writer > .basic-button {
   padding: .5em .75em;
   border: none;
   border-radius: 5%;
@@ -116,4 +116,36 @@ padding: 1em 0em;
 margin-left: 0em;
 width: 100%;
 background-color: rgba(159, 117, 106, 0.5)
+}
+
+/* styling the individual elemental pages */
+div.element{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+div.element-text{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0em 2em;
+  padding-bottom: 1em;
+  background-color: rgba(215, 191, 164, 0.5)
+
+}
+div.element-text > ol {
+  margin: 0em;
+  text-align: justify;
+}
+span.term{
+  font-weight: bold;
+}
+.button-sus {
+  text-align: center;
+  padding: .5em .75em;
+  width: 20%;
+  background-color: rgba(117, 64, 67, 0.5)
 }

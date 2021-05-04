@@ -8,11 +8,25 @@
       <%- include ('../partials/nav.ejs') %>
     </nav>
     <div class="container">
-      <h1>Characters</h1>
-      <a href="/characters/new">New Character</a>
+      <div class="element">
+        <h1>Characters</h1>
+        <div class="element-text">
+          <p> <span class="term"> Characters </span>can be a person, animal, being, creature, or a thing in a story. Characters perform actions and speak to move the story along.
+          <br><br>There are at least 5 different types of Characters:
+          <ol>
+            <li>1.<span class="term"> Dynamic: </span>Most main characters and major characters are dynamic. These characters goes through an internal evolution throughout the course of the story.</li>
+            <li>2. <span class="term">Round:</span> A round character is a deep and layered character in a story. They are interesting to audiences because they feel like real people; audiences often feel invested in these characters' goal, successes, failures, strengths, and weaknesses.</li>
+            <li>3. <span class="term">Static:</span> A static character is the opposite of a dynamic character. These characters remain the smae throughout the storyline. Secondary characters in stories are commonly static.</li>
+            <li>4. <span class="term">Stock:</span> A stock character is a stereotypical fictional person or type of person in a work whom the audiences recognize from frequent recurrences. Some examples of a stock character are the Popular Girl, the dumb blonde, or the mean step-mother.</li>
+            <li>5. <span class="term">Symbolic:</span>A symbolic character represents a concept or theme larger than themselves. They usually exist to subtly steer the audience's mind toward broader concepts.
+            </li>
+          </ol>
+          </p>
+          <a href="/characters/new" class="button-sus">New Character</a>
+        </div>
+      </div>
 
       <h2>Characters entries are displayed here:</h2>
-        <ul>
           <% for (let i = 0; i < characters.length; i++){ %>
             <li>
               <a href="/characters/<%=characters[i].id%>">
@@ -20,10 +34,9 @@
               </a>
             </li>
           <% } %>
-        </ul>
-    </div>
-    <div class="buttons">
-      <a href="/elements">Elements Page</a>
+      <div class="buttons">
+        <a href="/elements">Elements Page</a>
+      </div>
     </div>
   </body>
 </html>
