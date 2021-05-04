@@ -9,15 +9,17 @@
     </nav>
     <div class="container">
       <h1>New Note</h1>
-      <form action="/notes" method="POST">
-        <label for="name">Name:</label><br/>
-        <input type="text" name="name" placeholder="Name"/><br/>
-        <label for="link">Pinterest Link:</label><br/>
-        <input type="text" name="link" placeholder="Insert Link"><br/>
-        <label for="description">Description:</label><br/>
-        <textarea name="description" cols="30" rows="10" placeholder="insert note description here"></textarea><br/>
-        <input type="submit" value="CREATE">
-      </form>
+      <div class="input-field">
+        <form action="/notes" method="POST">
+          <label for="name">Name:</label><br/>
+          <input type="text" name="name" placeholder="Name"/><br/>
+          <label for="link">Link:</label><br/>
+          <input type="text" name="link" placeholder="Insert Link"><br/>
+          <label for="description">Description:</label><br/>
+          <textarea name="description" cols="30" rows="10" placeholder="insert note description here"></textarea><br/>
+          <input type="submit" value="CREATE">
+        </form>
+      </div>
     </div>
   </body>
 </html>
