@@ -12,14 +12,17 @@
       <a href="/settings/new">New Setting</a>
       <h2>Settings are being desplayed here:</h2>
       <ul>
-        <% for (let setting of settings){ %>
+        <% for (let i = 0; i < settings.length; i++){ %>
           <li>
-            <a href="/settings/<%=setting.id%>">
-              <%=setting.name%>
+            <a href="/settings/<%=settings[i].id%>">
+              <%=settings[i].name%>
             </a>
           </li>
         <% } %>
       </ul>
+    </div>
+    <div class="buttons">
+      <a href="/elements">Elements Page</a>
     </div>
   </body>
 </html>

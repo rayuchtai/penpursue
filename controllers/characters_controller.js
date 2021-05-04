@@ -9,7 +9,8 @@ characters.get('/new', (req,res) => {
   res.render(
     'characters/new.ejs',
     {
-      currentUser: req.session.currentUser
+      currentUser: req.session.currentUser,
+      tabTitle: 'New Character'
     }
   )
 })
@@ -21,6 +22,7 @@ characters.get('/:id/edit', (req,res) => {
       'characters/edit.ejs',
       {
         character: foundCharacter,
+        tabTitle: foundCharacter.name,
         currentUser: req.session.currentUser
       }
     )
@@ -46,6 +48,7 @@ characters.get('/:id', (req,res) => {
       'characters/show.ejs',
       {
         character: foundCharacter,
+        tabtitle: foundCharacter.name,
         currentUser: req.session.currentUser
       }
     )
@@ -85,6 +88,7 @@ characters.get('/', (req,res) => {
       'characters/index.ejs',
       {
         characters: foundUser.characters,
+        tabTitle: 'The Characters',
         currentUser: req.session.currentUser
       }
     )

@@ -7,18 +7,23 @@
     <nav>
       <%- include ('../partials/nav.ejs') %>
     </nav>
-    <h1>Characters</h1>
-    <a href="/characters/new">New Character</a>
+    <div class="container">
+      <h1>Characters</h1>
+      <a href="/characters/new">New Character</a>
 
-    <h2>Characters entries are displayed here:</h2>
-      <ul>
-        <% for (let i = 0; i < characters.length; i++){ %>
-          <li>
-            <a href="/characters/<%=characters[i].id%>">
-              <%=characters[i].name%>
-            </a>
-          </li>
-        <% } %>
-      </ul>
+      <h2>Characters entries are displayed here:</h2>
+        <ul>
+          <% for (let i = 0; i < characters.length; i++){ %>
+            <li>
+              <a href="/characters/<%=characters[i].id%>">
+                <%=characters[i].name%>
+              </a>
+            </li>
+          <% } %>
+        </ul>
+    </div>
+    <div class="buttons">
+      <a href="/elements">Elements Page</a>
+    </div>
   </body>
 </html>

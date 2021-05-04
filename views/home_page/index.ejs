@@ -7,19 +7,38 @@
     <nav>
       <%- include ('../partials/nav.ejs') %>
     </nav>
-    <% if (currentUser){ %>
-      <h1>Home Index Page</h1>
-        <ul>
-          <li><a href="/characters">Characters</a></li>
-          <li><a href="/settings">Settings</a></li>
-          <li><a href="/plots">Plots</a></li>
-          <li><a href="/chapters">Chapters</a></li>
-          <li><a href="/notes">Notes</a></li>
-        </ul>
-    <% } else { %>
-      <button><a href="/users/new">Sign Up</a></button>
-      <button><a href="/sessions/new">Log In</a></button>
-  <% } %>
-
+    <% if(currentUser){ %>
+      <div class="container">
+        <h1>Home Index Page</h1>
+          <ul>
+            <li><a href="/characters">Characters</a></li>
+            <li><a href="/settings">Settings</a></li>
+            <li><a href="/plots">Plots</a></li>
+            <li><a href="/chapters">Chapters</a></li>
+            <li><a href="/notes">Notes</a></li>
+          </ul>
+      </div>
+    <% }else{ %>
+      <div class="container">
+        <div class="welcome-text">
+          <h1>Welcome Writers to PenPursue!</h1>
+          <p>PenPursue is a place where writers of all levels can organize their thoughts whenever inspiration hits or an idea sparks while living life.</p>
+          <p>"It is okay to write garbage - as long as you edit brilliantly."
+            <br>- C. J. Cherryh</p>
+        </div>
+        <div class="which-writer">
+          <div class="returning">
+            <h2>Are you a returning writer?</h2>
+            <h3>Welcome Back.</h3>
+            <button><a href="/sessions/new">Sign In</a></button>
+          </div>
+          <div class="new-writer">
+            <h2>Are You a New Writer?</h2>
+            <h3>Welcome.</h3>
+            <button><a href="/users/new">Sign Up</a></button>
+          </div>
+        </div>
+      </div>
+    <% } %>
   </body>
 </html>

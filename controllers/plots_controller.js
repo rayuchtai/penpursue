@@ -1,34 +1,42 @@
 const express = require('express')
 const Plot = require('../models/plot.js')
+const User = require('../models/users.js')
 const plots = express.Router()
 
-//NEW: new page to add a new plot entry
+//NEW: This is a page
 plots.get('/new', (req,res) => {
   res.render(
     'plots/new.ejs',
     {
-      currentUser: req.session.currentUser
+      currentUser: req.session.currentUser,
+      tabTitle: 'New Plot'
     }
   )
 })
 
-//EDIT: edit page to edit an existing plot entry
+//EDIT: This is a page
 plots.get('/:id/edit', (req,res) => {
   Plot.findById(req.params.id, (error, foundPlot) => {
     res.render(
       'plots/edit.ejs',
       {
         plot: foundPlot,
+        tabTitle: foundPlot.name,
         currentUser: req.session.currentUser
       }
     )
   })
 })
 
-//DELETE: the delete route to delete the thang
+//DELETE: the power of destruction
 plots.delete('/:id', (req,res) => {
   Plot.findByIdAndRemove(req.params.id, (error, deletedPlot) => {
-    res.redirect('/plots')
+    User.findById(req.session.currentUser._id, (error, foundUser) => {
+      foundUser.plots.id(req.params.id).remove()
+      foundUser.save((error, data) => {
+        res.redirect('/plots')
+      })
+    })
   })
 })
 
@@ -39,6 +47,7 @@ plots.get('/:id', (req,res) => {
       'plots/show.ejs',
       {
         plot: foundPlot,
+        tabTitle: foundPlot.name,
         currentUser: req.session.currentUser
       }
     )
@@ -52,25 +61,37 @@ plots.put('/:id', (req,res) => {
     req.body,
     { new: true},
     (error, updatedPlot) => {
-      res.redirect('/plots')
+      User.findById(req.session.currentUser._id, (error, foundUser) => {
+        foundUser.plots.id(req.params.id).remove()
+        foundUser.plots.push(updatedPlot)
+        foundUser.save((error, data) => {
+          res.redirect('/plots')
+        })
+      })
     }
   )
 })
 
 //CREATE route: creating a new plot
 plots.post('/', (req,res) => {
-  Plot.create(req.body, (error, createdPlot) => {
-    res.redirect('/plots')
+  User.findById(req.session.currentUser._id, (error, foundUser) => {
+    Plot.create(req.body, (error, createdPlot) => {
+      foundUser.plots.push(createdPlot)
+      foundUser.save((error, data) => {
+        res.redirect('/plots')
+      })
+    })
   })
 })
 
 //INDEX Page: Where the plot names are being displayed
 plots.get('/', (req,res) => {
-  Plot.find({}, (error, allPlots) => {
+  User.findById(req.session.currentUser._id, (error, foundUser) => {
     res.render(
       'plots/index.ejs',
       {
-        plots: allPlots,
+        plots: foundUser.plots,
+        tabTitle: 'The Plots',
         currentUser: req.session.currentUser
       }
     )

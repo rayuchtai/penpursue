@@ -1,19 +1,13 @@
-
-<% if (currentUser){ %>
-  <a href="/elements"></a>
-
+<% if(currentUser){ %>
   <ul>
     <li><a href="/elements">Home</a></li>
+    <li>PENPURSUE</li>
     <li><form action="/sessions?_method=DELETE" method="post">
-      <button type="submit">Log Out</button>
+      <button type="submit">Sign Out</button>
     </form></li>
   </ul>
 <% } else { %>
-  <a href="/elements">PEN PURSUE</a>
-
-  <ul>
-    <li><a href="/elements">Home</a></li>
-    <li><a href="/users/new">Sign Up</a></li>
-    <li><a href="/sessions/new">Log In</a></li>
-  </ul>
+  <li><a href="/elements">Home</a></li>
+  <li>PENPURSUE</li>
+  <li><a href="/users/new">Sign Up</a>/<a href="/sessions/new">Sign In</a></li>
 <% } %>

@@ -1,5 +1,6 @@
 const express = require('express')
 const Chapter = require('../models/chapters.js')
+const User = require('../models/users.js')
 const chapters = express.Router()
 
 //NEW Page
@@ -7,7 +8,8 @@ chapters.get('/new', (req,res) => {
   res.render(
     'chapters/new.ejs',
     {
-      currentUser: req.session.currentUser
+      currentUser: req.session.currentUser,
+      tabTitle: 'New Chapter'
     }
   )
 })
@@ -19,6 +21,7 @@ chapters.get('/:id/edit', (req,res) => {
       'chapters/edit.ejs',
       {
         chapter: foundChapter,
+        tabTitle: foundChapter.name,
         currentUser: req.session.currentUser
       }
     )
@@ -28,7 +31,12 @@ chapters.get('/:id/edit', (req,res) => {
 //DELETE Route: the abiity to delete an existing entry
 chapters.delete('/:id', (req,res) => {
   Chapter.findByIdAndRemove(req.params.id, (error, deletedChapter) => {
-    res.redirect('/chapters')
+    User.findById(req.session.currentUser._id, (error, foundUser) => {
+      foundUser.chapters.id(req.params.id).remove()
+      foundUser.save((error, data) => {
+        res.redirect('/chapters')
+      })
+    })
   })
 })
 
@@ -39,6 +47,7 @@ chapters.get('/:id', (req,res) => {
       'chapters/show.ejs',
       {
         chapter: foundChapter,
+        tabTitle: foundChapter.name,
         currentUser: req.session.currentUser
       }
     )
@@ -52,25 +61,37 @@ chapters.put('/:id', (req,res) => {
     req.body,
     { new: true },
     (error, updatedChapter) => {
-      res.redirect('/chapters')
+      User.findById(req.session.currentUser._id, (error, foundUser) => {
+        foundUser.chapters.id(req.params.id).remove()
+        foundUser.chapters.push(updatedChapter)
+        foundUser.save((error, data) => {
+          res.redirect('/chapters')
+        })
+      })
     }
   )
 })
 
 //CREATE: The power of Creation
 chapters.post('/', (req,res) => {
-  Chapter.create(req.body, (error, createdChapter) => {
-    res.redirect('/chapters')
+  User.findById(req.session.currentUser._id, (error, foundUser) => {
+    Chapter.create(req.body, (error, createdChapter) => {
+      foundUser.chapters.push(createdChapter)
+      foundUser.save((error, data) => {
+        res.redirect('/chapters')
+      })
+    })
   })
 })
 
 //INDEX Page: Displays all the chapter names
 chapters.get('/', (req,res) => {
-  Chapter.find({}, (error, allChapters) => {
+  User.findById(req.session.currentUser._id, (error, foundUser) => {
     res.render(
       'chapters/index.ejs',
       {
-        chapters: allChapters,
+        chapters: foundUser.chapters,
+        tabTitle: 'The Chapters',
         currentUser: req.session.currentUser
       }
     )

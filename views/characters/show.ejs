@@ -14,15 +14,18 @@
       <p><%=character.type%></p><br/>
       <label for="description">Description:</label>
       <p><%=character.description%></p><br/>
-      <button type="button" name="button">
-        <a href="/characters/<%=character.id%>/edit">EDIT</a>
-      </button>
-      <form action="/characters/<%=character.id%>?_method=DELETE" method="POST">
-        <input type="submit" value="DELETE" />
-      </form>
-      <button type="button" name="buttom">
-        <a href="/characters">BACK</a>
-      </button>
+
+      <div class="buttons">
+        <button type="button" name="button">
+          <a href="/characters/<%=character.id%>/edit">EDIT</a>
+        </button>
+        <form action="/characters/<%=character.id%>?_method=DELETE" method="POST">
+          <input type="submit" value="DELETE" />
+        </form>
+        <button type="button" name="buttom">
+          <a href="/characters">BACK</a>
+        </button>
+      </div>
     </div>
   </body>
 </html>

@@ -1,5 +1,6 @@
 const express = require('express')
 const Note = require('../models/notes.js')
+const User = require('../models/users.js')
 const notes = express.Router()
 
 //NEW Page
@@ -7,7 +8,8 @@ notes.get('/new', (req,res) => {
   res.render(
     'notes/new.ejs',
     {
-      currentUser: req.session.currentUser
+      currentUser: req.session.currentUser,
+      tabTitle: 'New Note'
     }
   )
 })
@@ -19,6 +21,7 @@ notes.get('/:id/edit', (req,res) => {
       'notes/edit.ejs',
       {
         note: foundNote,
+        tabTitle: foundNote.name,
         currentUser: req.session.currentUser
       }
     )
@@ -28,7 +31,12 @@ notes.get('/:id/edit', (req,res) => {
 //DELETE route
 notes.delete('/:id', (req,res) => {
   Note.findByIdAndRemove(req.params.id, (error, deletedNote) => {
-    res.redirect('/notes')
+    User.findById(req.session.currentUser._id, (error, foundUser) => {
+      foundUser.notes.id(req.params,id).remove()
+      foundUser.save((error, data) => {
+        res.redirect('/notes')
+      })
+    })
   })
 })
 
@@ -39,6 +47,7 @@ notes.get('/:id', (req,res) => {
       'notes/show.ejs',
       {
         note: foundNote,
+        tabTitle: foundNote.name,
         currentUser: req.session.currentUser
       }
     )
@@ -52,25 +61,37 @@ notes.put('/:id', (req,res) => {
     req.body,
     { new: true },
     (error, updatedNote) => {
-      res.redirect('/notes')
+      User.findById(req.session.currentUser._id, (error, foundUser) => {
+        foundUser.notes.id(req.params.id).remove()
+        foundUser.notes.push(updatedNote)
+        foundUser.save((error, data) => {
+          res.redirect('/notes')
+        })
+      })
     }
   )
 })
 
 //CREATE Route
 notes.post('/', (req,res) => {
-  Note.create(req.body, (error, createdNote) => {
-    res.redirect('/notes')
+  User.findById(req.session.currentUser._id, (error, foundUser) => {
+    Note.create(req.body, (error, createdNote) => {
+      foundUser.notes.push(createdNote)
+      foundUser.save((error, data) => {
+        res.redirect('/notes')
+      })
+    })
   })
 })
 
 //INDEX Page
 notes.get('/', (req,res) => {
-  Note.find({}, (error, allNotes) => {
+  User.findById(req.session.currentUser._id, (error, foundUser) => {
     res.render(
       'notes/index.ejs',
       {
-        notes: allNotes,
+        notes: foundUser.notes,
+        tabTitle: 'The Notes',
         currentUser: req.session.currentUser
       }
     )

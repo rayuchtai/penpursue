@@ -1,2 +1,9 @@
-<meta charset="utf-8">
-<title>This is a Title</title>
+<% if(currentUser){ %>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title><%=tabTitle%></title>
+<% } else{ %>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Welcome Writer!</title>
+<% } %>

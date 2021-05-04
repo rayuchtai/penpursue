@@ -37,6 +37,7 @@
 - Tackling the related models:
   - I am crying tears of joy! I figured out how to do the thing!!! YES!
   - I figured out how to add a new character to another user without the character appearing on the other user's page. The gasp of amazement I did was great. Movie sound effect perfect. The edit, create, and delete functionality worked well. Now I NEED to add this feature to the other four elements' controller js file.
+- I'm adding CSS at the moment. If I calm down, then it isn't as difficult, however, I am in the beginning stages of css right now. I lost time because I had once again knocked out. 
 ## Checklists
 
 ### Making the different Sections Full Crud:
@@ -44,7 +45,7 @@
 - [x] Settings = Full Crud
 - [x] Plots = Full Crud
 - [x] Chapters = Full Crud
-- [x] Other Notes = Full Crud
+- [x] Notes = Full Crud
 
 ### Lgin Authentication and the Related Models:
 - [x] Figure out related models
