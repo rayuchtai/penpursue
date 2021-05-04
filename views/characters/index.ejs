@@ -25,17 +25,18 @@
           <a href="/characters/new" class="button-sus">New Character</a>
         </div>
       </div>
-
-      <h2>Characters entries are displayed here:</h2>
-          <% for (let i = 0; i < characters.length; i++){ %>
-            <li>
-              <a href="/characters/<%=characters[i].id%>">
-                <%=characters[i].name%>
-              </a>
-            </li>
-          <% } %>
+      <h2 id="elements"><%=currentUser.name%>'s Characters:</h2>
+      <div class="entry-storage">
+        <% for (let i = 0; i < characters.length; i++){ %>
+          <li class="entries">
+            <a href="/characters/<%=characters[i].id%>">
+              <%=characters[i].name%>
+            </a>
+          </li>
+        <% } %>
+      </div>
       <div class="buttons">
-        <a href="/elements">Elements Page</a>
+        <a href="/elements"class="button-sus">Elements Page</a>
       </div>
     </div>
   </body>
