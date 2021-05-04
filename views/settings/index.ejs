@@ -8,21 +8,31 @@
       <%- include ('../partials/nav.ejs') %>
     </nav>
     <div class="container">
-      <h1>Settings</h1>
-      <a href="/settings/new">New Setting</a>
-      <h2>Settings are being desplayed here:</h2>
-      <ul>
+      <div class="element">
+        <h1>Settings</h1>
+        <div class="element-text">
+          <p> <span class="term">Settings</span> is the time and place (or when and where) of the story. <br><br> There are two types of settings:
+            <ol>
+              <li>1. <span class="term">Integral:</span>An integral setting dictates other societal elements in a story like language, dress, and transportation.</li>
+              <li>2. <span class="term">Backdrop:</span>A Backdrop setting is more generic like a story that takes place in an unnamed small town that is not time-specific.</li>
+            </ol>
+          </p>
+          <a href="/settings/new" class="button-sus">New Setting</a>
+        </div>
+      </div>
+      <h2><%=currentUser.name%>'s Settings:</h2>
+      <div class="entry-storage">
         <% for (let i = 0; i < settings.length; i++){ %>
-          <li>
+          <li class="entries">
             <a href="/settings/<%=settings[i].id%>">
               <%=settings[i].name%>
             </a>
           </li>
         <% } %>
-      </ul>
-    </div>
-    <div class="buttons">
-      <a href="/elements">Elements Page</a>
+      </div>
+      <div class="buttons">
+        <a href="/elements" class="button-sus">Elements Page</a>
+      </div>
     </div>
   </body>
 </html>

@@ -9,22 +9,24 @@
     </nav>
     <div class="container">
       <h1>New Setting</h1>
-      <form action="/settings" method="POST">
-        <label for="type">Type:</label>
-        <div class="select-container">
-          <select name="type">
-            <option value="Integral">Integral</option>
-            <option value="Backdrop">Backdrop</option>
-          </select>
-        </div>
-        <label for="name">Name:</label><br/>
-        <input type="text" name="name" placeholder="name" required /><br/>
-        <label for="images">Pinterest Board:</label><br/>
-        <input type="text" name="images" placeholder="Pinterest Board Link Goes Here" /><br/>
-        <label for="description">Description:</label><br/>
-        <textarea name="description" cols="30" rows="10" placeholder="describe setting here..."></textarea><br/>
-        <input type="submit" value="CREATE">
-      </form>
+      <div class="input-field">
+        <form action="/settings" method="POST">
+          <label for="type">Type:</label>
+          <div class="select-container">
+            <select name="type">
+              <option value="Integral">Integral</option>
+              <option value="Backdrop">Backdrop</option>
+            </select>
+          </div>
+          <label for="name">Name:</label><br/>
+          <input type="text" name="name" placeholder="name" required /><br/>
+          <label for="images">Link to the Images:</label><br/>
+          <input type="text" name="images" placeholder="Image Link Goes Here" /><br/>
+          <label for="description">Description:</label><br/>
+          <textarea name="description" cols="30" rows="10" placeholder="describe setting here..."></textarea><br/>
+          <input type="submit" value="CREATE">
+        </form>
+      </div>
     </div>
   </body>
 </html>
