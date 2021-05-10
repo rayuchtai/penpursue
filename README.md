@@ -6,7 +6,7 @@
     - Jack London, author of "The Call of the Wild"
 
 ## Technologies used:
-* Mongo, MongoDB, NodeJS, Express, Mongoose,
+* Mongo, MongoDB, NodeJS, Express, Mongoose, EJS
 ## Purpose:
 * PEN PURSUE is an app which will allow writers to log their information of their writings. The app will have sections that will allow the writer to divide their works:
   1. Characters
